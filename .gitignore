@@ -1,4 +1,4 @@
-node_modules
-package*
-babel*
-.eslintrc*
+*/node_modules
+*/package*
+*/babel*
+*/.eslintrc*
