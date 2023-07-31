@@ -1,4 +1,4 @@
-import Currency from "./3-currency";
+import Currency from './3-currency';
 
 class Pricing {
   constructor(amount, currency) {
@@ -8,12 +8,12 @@ class Pricing {
     this.amount = amount;
     this.currency = currency;
   }
-  
+
   // Getter and Setter for 'amount'
   get amount() {
     return this._amount;
   }
-  
+
   set amount(newAmount) {
     if (typeof newAmount === 'number') {
       this._amount = newAmount;
@@ -21,7 +21,7 @@ class Pricing {
       throw new TypeError('Amount must be a number');
     }
   }
-  
+
   // Getter and Setter for 'currency'
   get currency() {
     return this._currency;
