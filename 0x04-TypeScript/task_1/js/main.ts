@@ -29,22 +29,3 @@ const student2: Student = {
 
 const studentList: Student[] = [student1, student2];
 console.log(studentList);
-
-function renderTable() {
-  const tableBody = document.querySelector("#studentTable tbody");
-
-  for (const student of studentList) {
-    const newRow = document.createElement("tr");
-    const firstNameCell = document.createElement("td");
-    const locationCell = document.createElement("td");
-
-    firstNameCell.textContent = student.firstName;
-    locationCell.textContent = student.location;
-
-    newRow.appendChild(firstNameCell);
-    newRow.appendChild(locationCell);
-    tableBody.appendChild(newRow);
-  }
-}
-
-renderTable();
