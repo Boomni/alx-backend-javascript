@@ -28,23 +28,33 @@ const student2: Student = {
 };
 
 const studentList: Student[] = [student1, student2];
-console.log(studentList);
 
-function renderTable() {
-  const tableBody = document.querySelector("#studentTable tbody");
+const divElement = document.createElement('div');
+divElement.id = 'myDiv';
+divElement.textContent = 'Table rendered with vanilla Javascript';
+document.body.appendChild(divElement);
 
-  for (const student of studentList) {
-    const newRow = document.createElement("tr");
-    const firstNameCell = document.createElement("td");
-    const locationCell = document.createElement("td");
+const table = document.createElement('table');
+table.id = 'studentTable';
+document.body.appendChild(table);
 
-    firstNameCell.textContent = student.firstName;
-    locationCell.textContent = student.location;
+const thead = document.createElement('thead');
+table.appendChild(thead);
 
-    newRow.appendChild(firstNameCell);
-    newRow.appendChild(locationCell);
-    tableBody.appendChild(newRow);
-  }
+const trHeader = document.createElement('tr');
+thead.appendChild(trHeader);
+for (const key in student1) {
+  const th = document.createElement('th');
+  trHeader.appendChild(th);
+  th.textContent = key;
 }
 
-renderTable();
+for (const student of studentList) {
+  const tr = document.createElement('tr');
+  table.appendChild(tr);
+  for (const key of Object.keys(student) as (keyof Student)[]) {
+    const td = document.createElement('td');
+    tr.appendChild(td);
+    td.textContent = String(student[key]); // or td.textContent = student[key].toString();
+  }
+}

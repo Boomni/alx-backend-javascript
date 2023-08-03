@@ -1,31 +1,35 @@
-// Write an interface named Student that accepts the following elements: firstName(string), lastName(string), age(number), and location(string)
-// Create two students, and create an array named studentsList containing the two variables
-// Using Vanilla Javascript, render a table and for each elements in the array, append a new row to the table
-// Each row should contain the first name of the student and the location
+/*
+firstName(string) and lastName(string). These two attributes should only be modifiable when a Teacher is first initialized
+fullTimeEmployee(boolean) this attribute should always be defined
+yearsOfExperience(number) this attribute is optional
+location(string) this attribute should always be defined
+Add the possibility to add any attribute to the Object like contract(boolean) without specifying the name of the attribute
+*/
+
+export interface Teacher {
+  firstName: string;
+  lastName: string;
+  readonly fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  [key: string]: any;
+}
 
 
-interface Student {
-	firstName: string;
-	lastName: string;
-	age: number;
-	location: string;
+const teacher3: Teacher = {
+  firstName: 'John',
+  fullTimeEmployee: false,
+  lastName: 'Doe',
+  location: 'London',
+  contract: false,
 };
 
-const student1: Student = {
+console.log(teacher3);
 
-	firstName: "Ada",
-	lastName: "Eze",
-	age: 10,
-	location: "Africa"
-};
-
-const student2: Student = {
-
-        firstName: "Obi",
-        lastName: "Eze",
-        age: 14,
-        location: "Africa"
-};
-
-const studentList: Student[] = [student1, student2];
-console.log(studentList);
+// should print
+// Object
+// contract: false
+// firstName: "John"
+// fullTimeEmployee: false
+// lastName: "Doe"
+// location: "London"
