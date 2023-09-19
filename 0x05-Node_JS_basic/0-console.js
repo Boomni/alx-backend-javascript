@@ -1,2 +1,6 @@
-const displayMessage = (res) => {process.stdout.write(res + '\n');};
+// Executing basic javascript with Node JS
+
+const displayMessage = (res) => {
+  console.log(res);
+};
 module.exports = displayMessage;
