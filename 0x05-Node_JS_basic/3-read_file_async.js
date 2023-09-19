@@ -1,7 +1,6 @@
 // Reading a file asynchronously with Node JS
 const fs = require('fs');
 
-
 function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (error, data) => {

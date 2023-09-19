@@ -17,7 +17,7 @@ function countStudents(path) {
     }
   }
   console.log(`Number of students: ${data.length - 1}`);
- 
+
   for (const field in students) {
     const count = students[field].length;
     const list = students[field].join(', ');
@@ -26,4 +26,3 @@ function countStudents(path) {
 }
 
 module.exports = countStudents;
-
