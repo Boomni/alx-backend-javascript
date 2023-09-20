@@ -19,11 +19,12 @@ function countStudents(path) {
   console.log(`Number of students: ${data.length - 1}`);
 
   for (const field in students) {
-    if ({}.hasOwnProperty.call(students,field)) {
-    const count = students[field].length;
-    const list = students[field].join(', ');
-    console.log(`Number of students in ${field}: ${count}. List: ${list}`);
-  }}
+    if ({}.hasOwnProperty.call(students, field)) {
+      const count = students[field].length;
+      const list = students[field].join(', ');
+      console.log(`Number of students in ${field}: ${count}. List: ${list}`);
+    }
+  }
 }
 
 module.exports = countStudents;
