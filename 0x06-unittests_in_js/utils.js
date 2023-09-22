@@ -1,4 +1,6 @@
-function calculateNumber(type, a, b) {
+const Utils = {};
+
+Utils.calculateNumber = (type, a, b) => {
     if (type === 'SUM') {
         let roundedA = Math.round(a);
         let roundedB = Math.round(b);
@@ -17,6 +19,6 @@ function calculateNumber(type, a, b) {
          }
          return roundedA / roundedB;
     }
-}
+};
 
-module.exports = calculateNumber;
+module.exports = Utils;

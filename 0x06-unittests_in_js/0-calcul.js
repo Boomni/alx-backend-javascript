@@ -1,6 +1,8 @@
 function calculateNumber(a, b) {
-  const result = Math.round(a) + Math.round(b);
-  return result;
+    let roundedA = Math.round(a);
+    let roundedB = Math.round(b);
+    return roundedA + roundedB;
+
 }
 
 module.exports = calculateNumber;
