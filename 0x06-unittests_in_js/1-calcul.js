@@ -1,22 +1,19 @@
 function calculateNumber(type, a, b) {
+    const aRound = Math.round(a);
+    const bRound = Math.round(b);
+
     if (type === 'SUM') {
-        let roundedA = Math.round(a);
-        let roundedB = Math.round(b);
-        return roundedA + roundedB;
+       return aRound + bRound;
     }
-    else if (type === 'SUBTRACT') {
-        let roundedA = Math.round(a);
-        let roundedB = Math.round(b);
-        return roundedA - roundedB;
+    if (type === 'SUBTRACT') {
+       return aRound - bRound;
     }
-    else if (type === 'DIVIDE') {
-         let roundedA = Math.round(a);
-         let roundedB = Math.round(b);
-         if (roundedB === 0) {
-            return 'Error';
-         }
-         return roundedA / roundedB;
-    }
+    if (type === 'DIVIDE') {
+       if (bRound === 0) {
+         return 'Error';
+	}
+	return aRound / bRound;
+      }
 }
 
 module.exports = calculateNumber;

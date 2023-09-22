@@ -1,27 +1,27 @@
-
 const assert = require('assert');
-const calculateNumber = require('./0-calcul')
+const calculateNumber = require('./0-calcul');
 
-describe("Testing for the rounded summation", () => {
-    it('Round and add two positive numbers correct', () => {
-        const Result = calculateNumber(4.3, 5.7);
-        assert.equal(Result, 10);
-    });
-    it('Round and add two positive numbers', () => {
-        const Result = calculateNumber(-3.6, -6.6);
-        assert.strictEqual(Result, -11);
-    });
-    it('Round one positive and negative and adds them', () => {
-        const Result = calculateNumber(-3.6, 6.6);
-        assert.strictEqual(Result, 3);
-    })
-    it('Round 0 and one positive number', () => {
-        const Result = calculateNumber(0, 4);
-        assert.strictEqual(Result, 4)
-    });
-    it('Round 0 and one negative number', () => {
-        const Result = calculateNumber(0, -4);
-        assert.strictEqual(Result, -4);
-    });
-})
-    
+describe('#calculateNumber() with type SUM', () => {
+  it('should return 4 when adding 1 and 3', () => {
+    assert.equal(calculateNumber(1, 3), 4);
+  });
+  it('should return 5 when adding 1 and 3.7', () => {
+    assert.equal(calculateNumber(1, 3.7), 5);
+  });
+  it('should return 5 when adding 1.2 and 3.7', () => {
+    assert.equal(calculateNumber(1.2, 3.7), 5);
+  });
+  it('should return 6 when adding 1.5 and 3.7', () => {
+    assert.equal(calculateNumber(1.5, 3.7), 6);
+  });
+  it('should return 0 when adding 0.1 and 0.3', () => {
+    assert.equal(calculateNumber(0.1, 0.3), 0);
+  });
+  it('should return 0 when adding -0.7 and 0.7', () => {
+    assert.equal(calculateNumber(-0.7, 0.7), 0);
+  });
+  it('should return -2 when adding -0.8 and -0.7', () => {
+    assert.equal(calculateNumber(-0.8, -0.7), -2);
+  });
+});
+
