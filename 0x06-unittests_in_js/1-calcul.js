@@ -1,5 +1,4 @@
-// Rounds numbers
-const calculateNumber = (type, a, b) => {
+function calculateNumber(type, a, b) {
   if (type == 'SUM') {
     const result = Math.round(a) + Math.round(b);
     return result;
@@ -15,6 +14,6 @@ const calculateNumber = (type, a, b) => {
     const result = Math.round(a) / Math.round(b);
     return result;
   }
-};
+}
 
 module.exports = calculateNumber;
