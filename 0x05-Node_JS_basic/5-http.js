@@ -26,13 +26,13 @@ const countStudents = (path, callback) => {
         }
       }
 
-      let response = `Number of students: ${lines.length - 1}\n`;
+      let response = `Number of students: ${lines.length - 1}`;
 
       for (const field in students) {
         if ({}.hasOwnProperty.call(students, field)) {
           const count = students[field].length;
           const list = students[field].join(', ');
-          response += `Number of students in ${field}: ${count}. List: ${list}`;
+          response += `\nNumber of students in ${field}: ${count}. List: ${list}`;
         }
       }
 
@@ -52,7 +52,7 @@ const app = http.createServer((req, res) => {
         res.statusCode = 500;
         res.end(`Internal Server Error: ${error.message}`);
       } else {
-        res.end(`This is the list of our students:\n ${data}`);
+        res.end(`This is the list of our students:\n${data}`);
       }
     });
   } else {
