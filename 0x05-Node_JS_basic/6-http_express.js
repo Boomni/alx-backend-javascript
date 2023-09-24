@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 const port = 1245;
 
@@ -8,7 +9,7 @@ app.get('/', (req, res) => {
 
 app.get('*', (req, res) => {
   res.status(404).send(
-`<!DOCTYPE html>
+    `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -17,7 +18,8 @@ app.get('*', (req, res) => {
 <body>
   <pre>Cannot GET ${req.url}</pre>
 </body>
-</html>`);
+</html>`,
+  );
 });
 
 app.listen(port, () => {
