@@ -3,7 +3,6 @@ const fs = require('fs');
 
 const hostname = 'localhost';
 const port = 1245;
-const db = process.argv[2];
 
 const countStudents = (path, callback) => {
   fs.readFile(path, 'utf8', (error, data) => {
@@ -47,12 +46,12 @@ const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    countStudents(db, (error, data) => {
+    countStudents('database.csv', (error, data) => {
       if (error) {
         res.statusCode = 500;
         res.end(`Internal Server Error: ${error.message}`);
       } else {
-        res.end(`This is the list of our students:\n${data}`);
+        res.end(`This is the list of our students\n${data}`);
       }
     });
   } else {
