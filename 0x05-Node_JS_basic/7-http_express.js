@@ -44,10 +44,10 @@ const countStudents = (path, callback) => {
 };
 
 app.get('/students', (req, res) => {
-  countStudents('database.csv', (error, data) => {
+  countStudents(process.argv[2], (error, data) => {
     if (error) {
       res.statusCode = 500;
-      res.send(`Internal Server Error: ${error.message}`);
+      res.send(`This is the list of our students\n${error.message}`);
     } else {
       res.send(`This is the list of our students\n${data}`);
     }
